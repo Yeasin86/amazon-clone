@@ -4,9 +4,7 @@ import Header from './components/Header/Header'
 import Shop from './components/Header/Shop/Shop'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
+return (
     <div className="App">
       <Header></Header>
       <Shop></Shop>
