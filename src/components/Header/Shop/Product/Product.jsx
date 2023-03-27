@@ -2,22 +2,26 @@ import React from 'react';
 import "./Product.css"
 
 const Product = (props) => {
-    console.log(props.product)
     const { category, img, name, price, ratings, seller } = props.product
+    const addToCart = props.addToCart; 
+    
     return (
         <div className='product-card'>
-            <small className='product-category'>{category}</small>
+            <small title="Products Category" className='product-category'>{category}</small>
             <div className='card-image'>
                 <img src={img} alt="" />
             </div>
             <div className='card-body'>
-                <h3>{name}</h3>
-                <h2>Price: {price * 1.5.toFixed(0)} BDT</h2>
-                <div>
-                    <small>{ratings}</small>
-                    <small>{seller}</small>
+                <h3 className='product-name'>{name}</h3>
+                <h5 className='product-price'>Price: {price * 1.5.toFixed(0)} BDT</h5>
+                <div className='product-quality-info'>
+                    <p>Ratings: {ratings} Stars</p>
+                    <p>Manufacturer: {seller}</p>
                 </div>
             </div>
+            <button onClick={()=>{addToCart(props.product)}} className='add-to-cart-btn'>
+                Add To Cart <i class="fa-solid fa-cart-plus"></i>
+            </button>
         </div>
     );
 };
