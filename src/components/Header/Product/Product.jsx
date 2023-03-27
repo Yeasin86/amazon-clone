@@ -15,7 +15,7 @@ const Product = (props) => {
             </div>
             <div className='card-body'>
                 <h3 className='product-name'>{name}</h3>
-                <h5 className='product-price'>Price: {price * 1.5.toFixed(0)} BDT</h5>
+                <h5 className='product-price'>Price: {(price*105.05).toFixed(0)} BDT</h5>
                 <div className='product-quality-info'>
                     <p>Ratings: {ratings} Stars</p>
                     <p>Manufacturer: {seller}</p>

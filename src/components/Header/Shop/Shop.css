@@ -7,17 +7,16 @@
     position: static;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 45px;
-    padding: 150px 80px;
+    gap: 25px;
+    padding: 50px;
 }
 
 .cart-items {
-    position: sticky;
-    /* left: 0px; */
-    right: 0px;
     background: rgba(255, 153, 0, 0.3);
     height: 100vh;
-    padding: 5px;
+    padding: 25px;
+    position: sticky;
+    top: 0;
 }
 
 .title {
