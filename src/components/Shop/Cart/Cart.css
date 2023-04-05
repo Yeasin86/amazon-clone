@@ -14,3 +14,19 @@
     letter-spacing: 0.0015em;
     color: #0E161A;
 }
+
+.clear-cart-btn {
+    background: #FF3030;
+    border-radius: 4px;
+    width: 100%;
+    color: white;
+    margin: 10px 0px;
+}
+
+.preview-order-btn {
+    background: #FF9900;
+    border-radius: 4px;
+    width: 100%;
+    color: white;
+    margin: 10px 0px;
+}
