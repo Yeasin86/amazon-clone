@@ -21,6 +21,8 @@
     width: 100%;
     color: white;
     margin: 10px 0px;
+    padding: 10px;
+    border: none;
 }
 
 .preview-order-btn {
@@ -29,4 +31,6 @@
     width: 100%;
     color: white;
     margin: 10px 0px;
+    padding: 10px;
+    border: none;
 }
