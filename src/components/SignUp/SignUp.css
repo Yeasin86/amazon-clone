@@ -1,0 +1,21 @@
+.title-signup-page{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.signUp-form-container{
+    border: 1px solid rgba(128, 128, 128, 0.178);
+    width: 36%;
+    border-radius: 8px;
+    padding: 20px;
+    height: 100%;
+    margin: auto;
+    box-shadow: -15px 15px rgba(255, 153, 0, 0.3);
+}
+
+.err-message{
+    color: red;
+    font-size: 16px;
+    padding-left: 20px;
+    text-transform: capitalize;
+}

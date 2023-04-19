@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   addToDb,
   deleteShoppingCart,
@@ -10,6 +10,7 @@ import "./Shop.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -47,6 +48,7 @@ const Shop = () => {
     deleteShoppingCart();
   };
 
+  const {user} = useContext(AuthContext)
   return (
     <div className="shop-container">
       <div className="products-container">
