@@ -6,21 +6,23 @@ import { AuthContext } from "../providers/AuthProvider";
 const Login = () => {
   const { logIn } = useContext(AuthContext);
 
-  const handleLogOut = (event) => {
+  const handleLogIn = (event) => {
     event.preventDefault(); 
     const form = event.target;
     const email = form.email.value; 
     const password = form.password.value; 
+
     logIn(email, password)
     .then(result => {
         const loggedUser = result.user; 
         console.log(loggedUser);
     })
+
     .catch(err=> console.log(err.message))
   };
   
   return (
-    <form onSubmit={handleLogOut} className="form-container">
+    <form onSubmit={handleLogIn} className="form-container">
       <label htmlFor="">
         <h2 className="form-title">Login</h2>
       </label>
@@ -29,7 +31,6 @@ const Login = () => {
         <input
           type="email"
           name="email"
-          id=""
           placeholder="Enter your email address"
           required
         />
@@ -39,7 +40,6 @@ const Login = () => {
         <input
           type="password"
           name="password"
-          id=""
           placeholder="Enter your password"
           required
         />
@@ -49,7 +49,6 @@ const Login = () => {
           className="login-btn"
           type="submit"
           name="password"
-          id=""
           value="Login"
           required
         />

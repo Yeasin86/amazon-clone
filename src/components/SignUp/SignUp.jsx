@@ -7,6 +7,7 @@ const SignUp = () => {
 
   const [errorMessage, setErrorMessage] = useState(" ")
   const [accountExists, setAccountExists] = useState(" ")
+
   const {register, setUser} = useContext(AuthContext); 
 
   
@@ -15,16 +16,29 @@ const SignUp = () => {
     const form = event.target; 
     const email = form.email.value;
     const password = form.password.value; 
-    const confirmPassword = form.confirmPassword; 
-    setErrorMessage(" ")
+    const confirmPassword = form.confirmPassword.value;
 
+    setErrorMessage(' ')
     if(password !== confirmPassword){
       setErrorMessage("password didn't match")
+      return;
+    }
+    if(password < 6){
+      setErrorMessage("Password must contain 6 characters")
+      return;
     }
 
     register(email, password)
-    .then(res => setUser(res.user))
-    .catch(err => setAccountExists(err.message))
+    .then(result => {
+      setErrorMessage(" ")
+      const loggedUser = result.user; 
+      console.log(loggedUser)
+    })
+      
+    .catch(err => {
+      console.log(err);
+      setErrorMessage(err.message)
+    })
   }
 
   return (
@@ -37,7 +51,6 @@ const SignUp = () => {
           <input
             type="text"
             name="name"
-            id=""
             placeholder="Enter your name"
             required
           />
@@ -47,7 +60,6 @@ const SignUp = () => {
           <input
             type="email"
             name="email"
-            id=""
             placeholder="Enter your email address"
             required
           />
@@ -57,20 +69,18 @@ const SignUp = () => {
           <input
             type="password"
             name="password"
-            id=""
             placeholder="Enter your password"
             required
           />
         </div>
-        {
+        
           <p className="err-message">{errorMessage}</p>
-        }
+        
         <div className="form-control">
           <label htmlFor="password">Confirm Password</label>
           <input
             type="password"
             name="confirmPassword"
-            id=""
             placeholder="Retype your password"
             required
           />
@@ -80,7 +90,6 @@ const SignUp = () => {
             className="login-btn"
             type="submit"
             name=""
-            id=""
             value="Sign Up"
             required
           />

@@ -9,16 +9,16 @@ const Header = () => {
   return (
     <div className="header">
       <img src={logo} alt="" />
-      <nav>
+      <nav className="navMenu">
         <Link to="/">Shop</Link>
         <Link to="/orders">Orders</Link>
         <Link to="/inventory">Inventory</Link>
         <Link to="/login">Login</Link>
         <Link to="/signUp">Sign Up</Link>
-        {user&& <div>
-          <img src="https://thumbs.dreamstime.com/b/person-icon-black-background-person-solid-vector-eps-90447225.jpg" alt="" />
-        </div>
-        }
+        <Link to="/profile">
+          {user&& <img className="userIcon" src="https://thumbs.dreamstime.com/b/person-icon-black-background-person-solid-vector-eps-90447225.jpg" alt="" />}
+        </Link>
+        
       </nav>
     </div>
   );
