@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Cart from "../Shop/Cart/Cart";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import ReviewItems from "./ReviewItems/ReviewItems";
 import "../Orders/Orders.css";
 import { deleteShoppingCart, removeFromDb } from "../../utilities/fakedb";
@@ -35,7 +35,9 @@ const Orders = () => {
       <div className="cart-items">
         <Cart cart={cart} handleClearCart={handleClearCart}>
           <button className="preview-order-btn">
-            Proceed Checkout <FontAwesomeIcon icon={faCreditCard} />
+            <Link to="/checkout">
+              Proceed Checkout <FontAwesomeIcon icon={faCreditCard} />
+            </Link>
           </button>
         </Cart>
       </div>

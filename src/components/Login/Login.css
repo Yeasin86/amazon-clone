@@ -44,3 +44,16 @@
     text-align: center;
     padding: 20px 0px ;
 }
+
+.show-pass-icon{
+    width: 25px;
+    position: relative;
+    right: 60px;
+    cursor: pointer;
+}
+
+.password-box{
+
+    display: flex;
+    position: relative;
+}

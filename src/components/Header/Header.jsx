@@ -16,7 +16,7 @@ const Header = () => {
         <Link to="/login">Login</Link>
         <Link to="/signUp">Sign Up</Link>
         <Link to="/profile">
-          {user&& <img className="userIcon" src="https://thumbs.dreamstime.com/b/person-icon-black-background-person-solid-vector-eps-90447225.jpg" alt="" />}
+          {user&& <img className="userIcon" src="https://i.ibb.co/fdwyBxN/User.png" alt="" />}
         </Link>
         
       </nav>

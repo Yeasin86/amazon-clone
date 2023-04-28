@@ -1,10 +1,16 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
+import { redirect, useNavigate } from 'react-router-dom';
 
 const Profile = () => {
     const {logOut} = useContext(AuthContext); 
+    const navigate = useNavigate(); 
     const handleLogOut = () =>{
         logOut()
+        .then(result =>{
+            navigate('/')
+        })
+        .catch(error => console.error(error))
     }
     return (
         <div>
@@ -12,7 +18,7 @@ const Profile = () => {
 
             <h4>Hi</h4>
 
-            <button>Log Out</button>
+            <button onClick={handleLogOut}>Log Out</button>
         </div>
     );
 };
